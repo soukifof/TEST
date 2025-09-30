@@ -1,0 +1,259 @@
+.profil-page {
+  position: fixed;
+  width: 380px;
+  height: 600px;
+  font-family: 'Inknut Antiqua', serif;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.719);
+  display: flex;
+   margin-left:35%;
+   top: 52px;
+}
+
+.material-i {
+  position: absolute;
+ width: 60px;
+  height: 25px;
+   top:-2px;
+  margin-left: 2.5%;
+  color: rgb(255, 255, 255);
+  border-radius: 43%;
+  margin-top:10px; 
+  box-shadow: #000000;
+  background-color: #5d8f6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 20px;
+   box-shadow: 0 16px 32px -8px rgb(0, 0, 0);
+  margin-top:-100px; 
+  margin-left: 4%;
+  color: #ffffff;
+  background-color: #7b9b6cf8;
+}
+.overlay {
+ position: absolute;
+  width: 350px;
+  height: 540px;
+  bottom: 30px;
+  left: 16px;
+  background: #ffffff;
+  opacity: 0.26;
+  filter: blur(2px);
+  border-radius: 52px;
+}
+
+.background-image {
+    position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.to {
+  height: 50px;
+  width:120.65px ; 
+  position: absolute;
+  top:500px;
+  margin-left: 34%;
+  box-shadow: #000000;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   background: #a5be9d;
+   line-height: 50px;
+  font-size: 18px;
+  color: white;
+}
+
+
+/* Texte d'en-tête */
+.text-champ {
+  position: absolute;
+  top: 195px;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.text-profil {
+    position: absolute;
+  top: 165px;
+  width: 100%;
+  text-align: center;
+  color: rgb(35, 41, 35);
+  font-size: 18px;
+}
+
+/* Logo */
+.logo { margin-top: 40px;
+  width: 93px;
+  height: 93px;
+  margin-left: 90px;
+  border-radius: 20px;
+  box-shadow: 0px 16px 32px -8px rgb(12, 12, 13);
+  margin-top: 110px;
+}
+
+.numero {
+  width: 191.61px;
+  height: 40px;
+  top: 523px;
+  left: 85px;
+  
+}
+
+.champs {
+  position: absolute;
+  background: #94bb9d;
+  border-radius: 25px;
+  box-shadow: 0 16px 32px -8px rgba(12, 12, 13, 0.4);
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+  margin-top: -30%;
+}
+
+
+.material-icons {
+  background-color: #253820;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+/* Texte photo profil */
+.text-profil {
+  position: absolute;
+  width: 350px;
+  height: 100px;
+  left: 28px;
+  top: 260px;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Texte photo carte */
+.text-carte {
+  position: absolute;
+  width: 352px;
+  left: 22px;
+  top: 316px;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+
+.seul {
+  margin-top:-300px ;
+}
+
+/* Boutons importer */
+.btn-import {
+  position: absolute;
+  width: 115px;
+  height: 45px;
+  
+  background: #f9f5f5;
+  border-radius: 60px;
+  font-family: 'Eczar', serif;
+  font-size: 18px;
+  line-height: 47px;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  
+}
+
+.import-profil {
+  left: 130px;
+  top: 330px;
+    background:  #dfffd3;
+ }
+
+.import-carte {
+  left: 130px;
+  top: 415px;
+   background:  #dfffd3;
+}
+
+/* Bouton création */
+.btn-creer {
+  position: absolute;
+  width: 121px;
+  height: 67px;
+  left: 131px;
+  top: 682px;
+  background: #889972;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-creer span {
+  font-family: 'Eczar', serif;
+  font-size: 24px;
+  color: #000;
+}
+
+/* Flèche */
+.arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 219px;
+  top: 695px;
+  background: #d9d9d9;
+  transform: rotate(-37.28deg);
+}
+
+/* Bouton retour */
+.btn-retour {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  left: 18px;
+  top: 30px;
+  background: #fff;
+  box-shadow: 0px 16px 32px -8px rgba(12, 12, 13, 0.4);
+  border-radius: 50px;
+}
+
+/* Chevron */
+.chevron-left {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  left: 28px;
+  top: 30px;
+  background: #d9d9d9;
+}
+
+/* Footer */
+.footer {
+    position:absolute;
+  margin-bottom: 30px;
+   margin-top: 580px;
+  margin-left: 115px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}

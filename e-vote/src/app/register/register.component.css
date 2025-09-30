@@ -1,0 +1,201 @@
+.register-page {
+  position: fixed;
+  width: 380px;
+  height: 600px;
+  font-family: 'Inknut Antiqua', serif;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.719);
+  display: flex;
+  margin-left:35%;
+   top: 52px;
+}
+.titre {
+     position: absolute;
+  top:115px;
+  margin-left: 25%;
+  font-size: 30px ;
+  
+  color: rgb(40, 51, 38);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity:var(#000000);
+}
+
+.for {
+  margin-top: -35px;
+  
+}
+
+.background-image {
+    position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+ position: absolute;
+  width: 350px;
+  height: 540px;
+  bottom: 30px;
+  left: 16px;
+  background: #ffffff;
+  opacity: 0.26;
+  filter: blur(2px);
+  border-radius: 52px;
+}
+
+.material-i {
+  position: absolute;
+ width: 60px;
+  height: 25px;
+   top:-2px;
+  margin-left: 2.5%;
+  color: rgb(255, 255, 255);
+  border-radius: 43%;
+  margin-top:10px; 
+  box-shadow: #000000;
+  background-color: #5d8f6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 20px;
+   box-shadow: 0 16px 32px -8px rgb(0, 0, 0);
+  margin-top:-100px; 
+  margin-left: 4%;
+  color: #ffffff;
+  background-color: #7b9b6cf8;
+}
+
+.text-champ {
+  position: absolute;
+  top: 185px;
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px ;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.material-icons {
+  background-color: #283b27;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+
+.foot {
+    position:absolute;
+  margin-bottom: -30px;
+   margin-top: 620px;
+  margin-left: 630px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.nom {
+    width: 105.65px;
+  height: 40px;
+  top: 240px;
+  left: 35px;
+}
+.prenom {
+    left: 230px;
+    width: 105.65px;
+  height: 40px;
+  top: 212px;
+}
+.date{
+    width: 135.65px;
+  height: 40px;
+  top: 250px;
+  left: 35px; 
+  font-size: 10px;
+}
+
+.téléphone{
+    width: 105.65px;
+  height: 40px;
+  top: 220px;
+  left: 230px; 
+}
+.email{
+height: 40px;
+ top: 255px;
+   width: 280.91px;
+    left: 48px;
+}
+
+.pw{
+  height: 40px;
+    top: 295px;
+   width:106.65px ;
+    left: 35px;
+}
+
+.pass {
+   height: 40px;
+    top: 268px;
+   width:106.65px ;
+    left: 230px; 
+}
+
+.to {
+  height: 50px;
+  width:120px ; 
+  position: absolute;
+  top:500px;
+  margin-left: 35%;
+  box-shadow: #000000;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   background: #a5be9d;
+   line-height: 50px;
+  font-size: 18px;
+  color: white;
+}
+
+.erreur {
+  color: red;
+  font-size: 1em;
+  
+}
+
+
+.champs {
+  position: relative;
+  background: #8ba583;
+  border-radius: 25px;
+  box-shadow: 0 16px 32px -8px rgba(12, 12, 13, 0.644);
+  text-align: center;
+  line-height: 50px;
+ font-size: 17px;
+  color: white;
+  margin-top: -30%;
+}

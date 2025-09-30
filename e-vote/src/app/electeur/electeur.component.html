@@ -1,0 +1,9 @@
+<form (ngSubmit)="enregistrer()">
+  <label>Nom :</label>
+  <input type="text" [(ngModel)]="nom" name="nom" placeholder="Entrez votre nom" />
+
+  <label>Numéro de téléphone :</label>
+  <input type="text" [(ngModel)]="numeroTelephone" name="numeroTelephone" placeholder="70000000" />
+
+  <button type="submit">S’inscrire</button>
+</form>

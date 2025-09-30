@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Baskervville&family=Be+Vietnam+Pro&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position:fixed;
+  width: 410px;
+  height: 602px;
+  font-family: 'Inknut Antiqua', serif;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.993);
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement */
+  display: flex;
+  margin-left:32%;
+  top: 50px;
+  
+  
+  
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top:0;
+  left: 100;
+  width: 393px;
+  height: 652px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  
+}
+
+.welcome {
+  margin-top: 100px;
+  width: 400px;
+  height: 62px;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+
+.se { 
+  font-size: 20px;
+  
+}
+.cre { 
+  font-size:20px;
+}
+
+.slogan {
+  margin-top: -5px;
+  font-family: 'Baskervville', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.logo {
+  margin-top: 40px;
+  width: 121px;
+  height: 111px;
+  border-radius: 20px;
+  box-shadow: 0px 16px 32px -8px rgb(12, 12, 13);
+
+}
+
+.btn {
+  margin-top: 16px;
+  width: 245px;
+  height: 55px;
+  background: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Inknut Antiqua', serif;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 24px;
+  color: black;
+}
+
+.version {
+  position:relative;
+  margin-bottom: 30px;
+   margin-top: 60px;
+  font-family: 'Be Vietnam Pro',sans-serif;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}

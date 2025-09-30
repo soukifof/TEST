@@ -1,0 +1,57 @@
+.wisdom-card {
+  background-color: #fff8dc;
+  border-left: 6px solid #d4af37;
+    border-right: 6px solid #d4af37;
+  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  height: 122px;
+  margin-top: -315px;
+  margin-left: 545px;
+  position: absolute;
+}
+
+.prov {
+    color: #000000;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+}
+
+.wisdom-title {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #8b5e3c;
+  text-align: center;
+}
+
+.wisdom-fr {
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: -8px;
+  text-align: center;
+}
+
+.wisdom-bm {
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+  margin-top: -18px;
+}
+.wisdom-card {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.wisdom-fr, .wisdom-bm {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

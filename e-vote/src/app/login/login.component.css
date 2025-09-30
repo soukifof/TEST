@@ -1,0 +1,231 @@
+.login-container {
+  position: fixed;
+  width: 380px;
+  height: 600px;
+  font-family: 'Inknut Antiqua', serif;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.719);
+  display: flex;
+  margin-left:35%;
+   top: 52px;
+}
+
+.avatar {
+  position: absolute;
+  top: 105px;
+  left: 140px;
+  width: 70px;
+  height: 70px;
+ background-color: #4e664fb7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-icons {
+  background-color: #4e664fb7;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.blur-box {
+  position: absolute;
+  width: 350px;
+  height: 560px;
+  bottom: 30px;
+  left: 16px;
+  background: #ffffff;
+  opacity: 0.16;
+  filter: blur(2px);
+  border-radius: 52px;
+}
+
+.text-champ {
+  position: relative;
+  top: 190px;
+  width: 100%;
+  
+  text-align: center;
+  color: rgb(63, 82, 64);
+  font-size: 20px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.hau {
+    position: absolute;
+  top:25px;
+  margin-left: 25%;
+  color: rgb(63, 82, 64);
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+    position:absolute;
+  margin-bottom: 30px;
+   margin-top: 630px;
+  margin-left: 630px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.champs {
+  position: absolute;
+  background: #94bb9d;
+  border-radius: 25px;
+  box-shadow: 0 16px 32px -8px rgba(12, 12, 13, 0.4);
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+  margin-top: -30%;
+}
+
+.nom {
+  width: 125.65px;
+  height: 40px;
+  top: 340px;
+  left: 22px;
+}
+
+.prenom {
+  width: 125.65px;
+  height: 40px;
+  top: 340px;
+  left: 220px;
+}
+
+.numero {
+  width: 150px;
+  height: 40px;
+  top: 423px;
+  left: 30px;
+  font-size: 16px;
+}
+ .telephone {
+  width: 140px;
+  height: 40px;
+    top: 425px;
+  left: 215px;
+}
+.email {
+  width: 259.91px;
+  height: 40px;
+  top: 500px;
+  left: 54px;
+}
+
+.motdepasse {
+  width: 210px;
+  height: 40px;
+  top: 569px;
+  left: 80px;
+}
+
+.connexion-btn {
+  pointer-events: auto;
+  position: absolute;
+  margin: 515px auto 0;
+  left: 110px;
+  display: block;
+  width: 162px;
+  height: 46px;
+  background: #ffefef;
+  border-radius: 50px;
+  font-size: 20px;
+  font-family: 'Days One', sans-serif;
+  color: #8da695;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+  .material-perso {
+  position: absolute;
+  top: 100px;
+  margin-left: 30%;
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.material-i {
+  position: absolute;
+ width: 60px;
+  height: 25px;
+   top:-2px;
+  margin-left: 2.5%;
+  color: rgb(255, 255, 255);
+  border-radius: 43%;
+  margin-top:10px; 
+  box-shadow: #000000;
+  background-color: #5d8f6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 20px;
+   box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
+  margin-top:-100px; 
+  margin-left: 4%;
+  color: #ffffff;
+  background-color: #7b9b6cf8;
+}
+.center-icon {
+  position: absolute;
+  left: 180px;
+  top: 80px;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  color: #000000;
+
+}
+
+.person-icon {
+  font-size: 48px;
+  color: #000000;
+   left: 100px;
+  top: 100px;
+   width: 300px;
+  height: 602px;
+}
+      

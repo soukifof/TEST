@@ -1,0 +1,112 @@
+.material-icons {
+  position: absolute;
+  background-color: rgba(41, 51, 39, 0.369); 
+  cursor: pointer;
+  color: #ffffff;
+  padding: 8px;
+  width:25px;
+  height: 25px;
+  opacity:var(#ffffffbe);
+  margin-top: 05px;
+  margin-left: -28px;
+  backdrop-filter: blur(15px);
+  border-radius: 52px ;
+  color: transparent;
+  animation: gradientShift 3s infinite linear;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+.bottom-nav a {
+  color: white;
+  
+}
+
+.bottom-nav a.active {
+  color: #000000; /* Couleur accent pour l’élément actif */
+}
+
+
+
+/* NAVIGATION BAS */
+.bottom-nav {
+  position: fixed;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.801);
+  width:390px;
+  height: 50px;
+  margin-top: 605px;
+  background: rgba(46, 65, 53, 0.19);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  margin-left: 499px;
+  z-index: 1000;
+
+}
+
+
+.u1 {
+  margin-left: 60px;
+  
+}
+
+.u2 {
+  margin-left: 146px;
+  
+
+}
+
+.u3 {
+  margin-left: 236px;
+}
+
+.u4 {
+  margin-left: 336px;
+}
+
+.ig1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 
+
+ .i1 {
+    width: 115px;
+    height: 100px;
+  
+ }
+
+  .i2 {
+    width: 115px;
+    height: 100px;
+ }
+.ig2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 
+
+  .i3 {
+    width: 115px;
+    height: 100px;
+ }
+ .ig3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 
+
+
+  .i4 {
+    width: 120px;
+    height: 100px;
+ }
+.ig4 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 

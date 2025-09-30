@@ -1,0 +1,26 @@
+<div class="container">
+  <img src="assets/bg-mali.jpg" class="background-image" alt="">
+
+  <div class="overlay">
+    <h2 class="welcome">Bienvenue Sur E-Vote Mali</h2>
+    <p class="slogan">La Démocratie à portée de main</p>
+
+    <img src="assets/logo-evote.png" class="logo" alt="logo">
+
+    <!-- Bouton Se connecter -->
+    <button class="btn connect" [routerLink]="'/login'">
+      <span class="se">Se connecter</span>
+      <span class="material-icons icon">account_tree</span>
+    </button>
+
+    <!-- Bouton Créer un compte -->
+     <button class="btn create" [routerLink]="'/register'">
+      <span class="cre">Créer un compte</span>
+      <span class="material-icons icon">account_circle</span>
+    </button>
+   
+
+
+    <p class="version">v1.0 - E-Vote Mali © 2025</p>
+  </div>
+</div>

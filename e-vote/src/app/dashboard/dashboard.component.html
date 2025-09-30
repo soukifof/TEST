@@ -1,0 +1,19 @@
+<div class="dashboard">
+  <h2>📋 Liste des électeurs</h2>
+  <table>
+    <tr><th>Nom</th><th>Numéro NINA</th></tr>
+    <tr *ngFor="let e of electeurs">
+      <td>{{ e.nom }}</td>
+      <td>{{ e.numeroNina }}</td>
+    </tr>
+  </table>
+
+  <h2>🗳️ Liste des votes</h2>
+  <table>
+    <tr><th>Numéro NINA</th><th>Candidat</th></tr>
+    <tr *ngFor="let v of votes">
+      <td>{{ v.numeroNina }}</td>
+      <td>{{ v.choix }}</td>
+    </tr>
+  </table>
+</div>
