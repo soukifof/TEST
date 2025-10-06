@@ -1,59 +1,107 @@
 package com.evotemali.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-@Table(name = "utilisateurs")
+@Table(name = "utilisateur") // ✅ Vérifiez que c'est le bon nom de table
 public class Utilisateur {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(nullable = false)
     private String nom;
+    
+    @Column(nullable = false)
     private String prenom;
+    
+    @Column(unique = true, nullable = false)
     private String email;
-    private String numero;
-    private String mot_de_passe;
-
-    private LocalDate date_naissance;
-    private LocalDateTime date_creation;
-
-    // 🔧 Constructeurs
-    public Utilisateur() {}
-
-    public Utilisateur(String nom, String prenom, String email, String numero, String mot_de_passe, LocalDate date_naissance) {
+    
+    private String telephone;
+    private String dateNaissance;
+    
+    @Column(nullable = false)
+    private String motDePasse;
+    
+    // ✅ CHAMPS CRITIQUES POUR LE PROFIL
+    private String numeroNina;
+    
+    @Column(length = 2000)
+    private String photoProfil;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreation;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateModification;
+    
+    // Constructeurs
+    public Utilisateur() {
+        this.dateCreation = new Date();
+        this.dateModification = new Date();
+    }
+    
+    public Utilisateur(String nom, String prenom, String email, String telephone, String motDePasse) {
+        this();
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.numero = numero;
-        this.mot_de_passe = mot_de_passe;
-        this.date_naissance = date_naissance;
-        this.date_creation = LocalDateTime.now();
+        this.telephone = telephone;
+        this.motDePasse = motDePasse;
     }
-
-    // 🔧 Getters et Setters
+    
+    // Getters et Setters
     public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    
     public String getNom() { return nom; }
     public void setNom(String nom) { this.nom = nom; }
-
+    
     public String getPrenom() { return prenom; }
     public void setPrenom(String prenom) { this.prenom = prenom; }
-
+    
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-    public String getNumero() { return numero; }
-    public void setNumero(String numero) { this.numero = numero; }
-
-    public String getMot_de_passe() { return mot_de_passe; }
-    public void setMot_de_passe(String mot_de_passe) { this.mot_de_passe = mot_de_passe; }
-
-    public LocalDate getDate_naissance() { return date_naissance; }
-    public void setDate_naissance(LocalDate date_naissance) { this.date_naissance = date_naissance; }
-
-    public LocalDateTime getDate_creation() { return date_creation; }
-    public void setDate_creation(LocalDateTime date_creation) { this.date_creation = date_creation; }
+    
+    public String getTelephone() { return telephone; }
+    public void setTelephone(String telephone) { this.telephone = telephone; }
+    
+    public String getDateNaissance() { return dateNaissance; }
+    public void setDateNaissance(String dateNaissance) { this.dateNaissance = dateNaissance; }
+    
+    public String getMotDePasse() { return motDePasse; }
+    public void setMotDePasse(String motDePasse) { this.motDePasse = motDePasse; }
+    
+    public String getNumeroNina() { return numeroNina; }
+    public void setNumeroNina(String numeroNina) { this.numeroNina = numeroNina; }
+    
+    public String getPhotoProfil() { return photoProfil; }
+    public void setPhotoProfil(String photoProfil) { this.photoProfil = photoProfil; }
+    
+    public Date getDateCreation() { return dateCreation; }
+    public void setDateCreation(Date dateCreation) { this.dateCreation = dateCreation; }
+    
+    public Date getDateModification() { return dateModification; }
+    public void setDateModification(Date dateModification) { 
+        this.dateModification = dateModification; 
+    }
+    
+    @PreUpdate
+    public void preUpdate() {
+        this.dateModification = new Date();
+    }
+    
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", numeroNina='" + numeroNina + '\'' +
+                ", photoProfil=" + (photoProfil != null ? "Oui" : "Non") +
+                '}';
+    }
 }

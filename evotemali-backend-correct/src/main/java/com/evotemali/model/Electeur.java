@@ -1,101 +1,41 @@
 package com.evotemali.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.Data;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "electeur") // facultatif mais recommandé
+@Table(name = "electeurs")
+@Data
 public class Electeur {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nom;
-    private String numeroNina;
+    @NotBlank
+    @Column(name = "numero_electeur", unique = true, nullable = false)
+    private String numeroElecteur;
+
+    @NotBlank
+    @Email
+    @Column(nullable = false)
+    private String email;
+
+    @NotBlank
+    @Pattern(regexp = "^(76|77|78|79|90|91)\\d{6}$")
+    @Column(nullable = false)
     private String telephone;
-    private String langue;
-    private String otp;
-    private LocalDateTime otpExpiration;
 
-    public Electeur() {}
+    @Column(name = "photo_carte")
+    private String photoCarte;
 
-    public Electeur(String nom, String numeroNina, String telephone, String langue, String otp, LocalDateTime otpExpiration) {
-        this.nom = nom;
-        this.numeroNina = numeroNina;
-        this.telephone = telephone;
-        this.langue = langue;
-        this.otp = otp;
-        this.otpExpiration = otpExpiration;
-    }
+    @Column(name = "est_verifie")
+    private Boolean estVerifie = false;
 
-    public Electeur(String nom, String numeroNina) {
-        this.nom = nom;
-        this.numeroNina = numeroNina;
-    }
+    @Column(name = "date_inscription")
+    private LocalDateTime dateInscription = LocalDateTime.now();
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getNumeroNina() {
-        return numeroNina;
-    }
-
-    public void setNumeroNina(String numeroNina) {
-        this.numeroNina = numeroNina;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getLangue() {
-        return langue;
-    }
-
-    public void setLangue(String langue) {
-        this.langue = langue;
-    }
-
-    public String getOtp() {
-        return otp;
-    }
-
-    public void setOtp(String otp) {
-        this.otp = otp;
-    }
-
-    public LocalDateTime getOtpExpiration() {
-        return otpExpiration;
-    }
-
-    public void setOtpExpiration(LocalDateTime otpExpiration) {
-        this.otpExpiration = otpExpiration;
-    }
-
-    @Override
-    public String toString() {
-        return "Electeur{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", numeroNina='" + numeroNina + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", langue='" + langue + '\'' +
-                ", otp='" + otp + '\'' +
-                ", otpExpiration=" + otpExpiration +
-                '}';
-    }
+    @Column(name = "est_actif")
+    private Boolean estActif = true;
 }

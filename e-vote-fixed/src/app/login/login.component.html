@@ -1,0 +1,72 @@
+<div class="login-container">
+  <img src="vote.jpg" alt="Image de fond - vote au Mali" class="background-image" />
+  <div class="blur-box"></div>
+
+  <!-- Barre du haut -->
+  <div class="back-btn" (click)="retourAccueil()" role="button" aria-label="Retour à l'accueil">
+    <span class="material-icons">arrow_back</span>
+  </div>
+
+  <div class="hau">
+    <h1>Se Connecter</h1>
+  </div>
+
+  <div class="avatar" aria-hidden="true">
+    <span class="material-icons e">emoji_emotions</span>
+  </div>
+
+  <div *ngIf="formulaireLogin.touched && !formulaireLogin.valid" class="text-champ">
+    Veuillez remplir les champs ci-dessous
+  </div>
+
+  <!-- Formulaire de connexion -->
+  <form [formGroup]="formulaireLogin" (ngSubmit)="onSeConnecter()">
+
+    <!-- Prénom -->
+    <input formControlName="prenom" placeholder="Prénom" class="champs prenom" aria-label="Prénom" />
+    <div class="error-message" *ngIf="formulaireLogin.get('prenom')?.touched && formulaireLogin.get('prenom')?.invalid">
+      <span *ngIf="formulaireLogin.get('prenom')?.errors?.['required']">Le prénom est requis.</span>
+      <span *ngIf="formulaireLogin.get('prenom')?.errors?.['minlength']">Minimum 1 caractère.</span>
+    </div>
+
+    <!-- Nom -->
+    <input formControlName="nom" placeholder="Nom" class="champs nom" aria-label="Nom" />
+    <div class="error-message" *ngIf="formulaireLogin.get('nom')?.touched && formulaireLogin.get('nom')?.invalid">
+      <span *ngIf="formulaireLogin.get('nom')?.errors?.['required']">Le nom est requis.</span>
+      <span *ngIf="formulaireLogin.get('nom')?.errors?.['minlength']">Minimum 1 caractère.</span>
+    </div>
+
+    <!-- Numéro Nina -->
+    <input formControlName="numero" placeholder="Numéro Nina" class="champs numero" aria-label="Numéro Nina" />
+    <div class="error-message" *ngIf="formulaireLogin.get('numero')?.touched && formulaireLogin.get('numero')?.invalid">
+      <span *ngIf="formulaireLogin.get('numero')?.errors?.['required']">Le numéro Nina est requis.</span>
+      <span *ngIf="formulaireLogin.get('numero')?.errors?.['pattern']">Format invalide (14 chiffres).</span>
+    </div>
+
+    <!-- Téléphone -->
+    <input formControlName="telephone" placeholder="Téléphone" class="champs telephone" aria-label="Téléphone" />
+    <div class="error-message" *ngIf="formulaireLogin.get('telephone')?.touched && formulaireLogin.get('telephone')?.invalid">
+      <span *ngIf="formulaireLogin.get('telephone')?.errors?.['required']">Le numéro de téléphone est requis.</span>
+      <span *ngIf="formulaireLogin.get('telephone')?.errors?.['pattern']">Format invalide (8 chiffres).</span>
+    </div>
+
+    <!-- Email -->
+    <input formControlName="email" placeholder="exemple@gmail.com" class="champs email" aria-label="Adresse email" />
+    <div class="error-message" *ngIf="formulaireLogin.get('email')?.touched && formulaireLogin.get('email')?.invalid">
+      <span *ngIf="formulaireLogin.get('email')?.errors?.['required']">L'email est requis.</span>
+      <span *ngIf="formulaireLogin.get('email')?.errors?.['email']">Format d'email invalide.</span>
+    </div>
+
+    <!-- Mot de passe -->
+    <input formControlName="motdepasse" placeholder="Mot de passe" class="champs motdepasse" aria-label="Mot de passe" />
+    <div class="error-message" *ngIf="formulaireLogin.get('motdepasse')?.touched && formulaireLogin.get('motdepasse')?.invalid">
+      <span *ngIf="formulaireLogin.get('motdepasse')?.errors?.['required']">Le mot de passe est requis.</span>
+      <span *ngIf="formulaireLogin.get('motdepasse')?.errors?.['minlength']">Minimum 10 caractères.</span>
+    </div>
+
+    <!-- Bouton de connexion -->
+    <button type="submit" class="connexion-btn">Se connecter</button>
+  </form>
+</div>
+
+<div class="footer-text">v1.0 — E-Vote Mali © 2025</div>

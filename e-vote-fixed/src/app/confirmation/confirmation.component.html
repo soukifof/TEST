@@ -1,0 +1,73 @@
+<div class="confirmation-page">
+  <!-- En-tête -->
+  <div class="confirmation-header">
+    <div class="success-icon">✅</div>
+    <h1>Vote Confirmé !</h1>
+    <p class="subtitle">Votre vote a été enregistré avec succès</p>
+  </div>
+
+  <!-- Carte de confirmation -->
+  <div class="confirmation-card">
+    <div class="card-header">
+      <h2>Récapitulatif de votre vote</h2>
+    </div>
+    
+    <div class="card-body">
+      <!-- Candidat -->
+      <div class="info-row">
+        <span class="label">Candidat choisi :</span>
+        <span class="value highlight">{{ nomCandidat }}</span>
+      </div>
+
+      <!-- Référence -->
+      <div class="info-row">
+        <span class="label">Référence :</span>
+        <span class="value code">{{ reference }}</span>
+      </div>
+
+      <!-- Date et heure -->
+      <div class="info-row">
+        <span class="label">Date et heure :</span>
+        <span class="value">{{ getFormattedDate() }}</span>
+      </div>
+
+      <!-- Statut -->
+      <div class="info-row">
+        <span class="label">Statut :</span>
+        <span class="value status-confirmed">✅ Confirmé</span>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <p class="notice">
+        <strong>Important :</strong> Conservez cette référence pour toute réclamation.
+        Votre vote est anonyme et sécurisé.
+      </p>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions-container">
+    <button class="btn btn-primary" (click)="telechargerRecu()">
+      📄 Télécharger le reçu
+    </button>
+    
+    <button class="btn btn-secondary" (click)="voterEncore()">
+      🗳️ Voter à nouveau
+    </button>
+
+    <button class="btn btn-outline" (click)="retourAccueil()">
+      🏠 Retour à l'accueil
+    </button>
+
+    <button *ngIf="candidat" class="btn btn-info" (click)="voirProfilCandidat()">
+      👤 Voir le profil du candidat
+    </button>
+  </div>
+
+  <!-- Message de remerciement -->
+  <div class="thank-you-message">
+    <h3>Merci pour votre participation !</h3>
+    <p>Votre voix compte pour l'avenir du Mali.</p>
+  </div>
+</div>

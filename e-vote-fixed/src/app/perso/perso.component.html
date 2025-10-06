@@ -1,0 +1,59 @@
+<div class="perso-page">
+  
+  <!-- Image de fond -->
+  <img src="m30.jpg" alt="Image de fond" class="background-image" />
+  <div class="overlay"></div>
+
+  <!-- Logo -->
+  <img src="logo-evote.png" alt="Logo E-Vote Mali" class="logo" />
+  
+
+  <h2 class="perso-title">Mon Profil</h2>
+  <h2 class="salutation">{{ salutation }}</h2>
+
+  
+  <!-- Photo de profil -->
+  <div class="avatar">
+    <img *ngIf="utilisateur.photoProfil" 
+         [src]="utilisateur.photoProfil" 
+         alt="Photo de profil" 
+         class="image-profil"
+         (error)="utilisateur.photoProfil = 'assets/images/photos/default-profil.jpg'" />
+    <span *ngIf="!utilisateur.photoProfil" class="material-icons">account_circle</span>
+  </div>
+ 
+
+  <!-- Nom complet -->
+  <h3 class="username">{{ utilisateur.prenom }} {{ utilisateur.nom }}</h3>
+
+  <!-- Détails utilisateur -->
+  <div class="user-details">
+    <div class="detail-item">
+      <p class="label">Nom :</p> 
+      <div class="champs nom">{{ utilisateur.nom || 'Non renseigné' }}</div>
+    </div>
+    
+    <div class="detail-item">
+      <p class="label">Prénom :</p> 
+      <div class="champs prenom">{{ utilisateur.prenom || 'Non renseigné' }}</div>
+    </div>
+    
+    <div class="detail-item">
+      <p class="label">Numéro Nina :</p> 
+      <div class="champs numero">{{ utilisateur.nina || 'Non renseigné' }}</div>
+    </div>
+    
+    <div class="detail-item">
+      <p class="label">E-mail :</p> 
+      <div class="champs email">{{ (utilisateur.email || 'Non renseigné').replace('@', '&#64;') }}</div>
+    </div>
+    
+    <div class="detail-item">
+      <p class="label">Téléphone :</p> 
+      <div class="champs tele">{{ utilisateur.telephone || 'Non renseigné' }}</div>
+    </div>
+  </div>
+
+  
+
+</div>

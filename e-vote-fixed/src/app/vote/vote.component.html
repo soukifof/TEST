@@ -1,0 +1,68 @@
+<div class="vote-page">    
+  <!-- Image de fond -->
+  <img src="makav001.jpg" alt="" class="background-image">
+
+  <!-- En-tête de la section de vote -->
+  <header class="vote-header">
+    <img src="logo-evote.png" alt="Logo" class="logo">
+    <h2 class="tete">Choisissez votre candidat favoris</h2>
+    
+    <!-- Indicateur de chargement -->
+    <div *ngIf="isLoading" class="loading-indicator">
+      Chargement des candidats...
+    </div>
+    
+    <!-- Message d'erreur -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </header>
+
+  <!-- Contenu principal défilable -->
+  <main class="scrollable-content">
+    <div class="vote-list">
+      <div class="candidat-card" *ngFor="let c of candidats; trackBy: trackByCandidatId">
+        
+        <!-- Photo du candidat cliquable pour afficher le slogan -->
+        <div class="photo" (click)="afficherSlogan(c)">
+          <img [src]="c.photoUrl" [alt]="'Photo de ' + c.nom" />
+          <div *ngIf="c.votesCount" class="vote-count">
+            {{ c.votesCount }} votes
+          </div>
+        </div>
+
+        <!-- Nom du candidat -->
+        <h3>{{ c.nom }}</h3>
+        
+        <!-- Parti -->
+        <div *ngIf="c.parti" class="parti">
+          {{ c.parti }}
+        </div>
+
+        <!-- Bouton de vote -->
+        <button (click)="allerfavoris(c)" [title]="'Voter pour ' + c.nom" class="voter">
+          Voter
+        </button>
+
+        <!-- Slogan affiché si activé -->
+        <div class="slogan" *ngIf="c.afficherSlogan">
+          <p>{{ c.slogan }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message si pas de candidats -->
+    <div *ngIf="candidats.length === 0 && !isLoading" class="no-candidates">
+      Aucun candidat disponible pour le moment.
+    </div>
+
+    <!-- Composant de confirmation -->
+    <div *ngIf="candidatChoisi" class="confirmation-message">
+      <p>Merci pour votre vote pour {{ candidatChoisi.nom }} !</p>
+      <p>« Un seul vote peut changer l'avenir du Mali. »</p>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  
+</div>

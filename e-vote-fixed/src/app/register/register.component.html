@@ -1,0 +1,78 @@
+<div class="register-page">
+  <img src="register.jpg" alt="Background" class="background-image" />
+  <div class="overlay"></div>
+
+  <h2 class="titre">Créer un compte</h2>
+
+  <div class="form-container">
+    <div class="text-champ">Veuillez remplir les champs ci-dessous</div>
+
+    <div class="back-btn" (click)="retourAccueil()">
+      <span class="material-icons">arrow_back</span>
+    </div>
+
+    <form [formGroup]="form" class="for">
+      <!-- Champ Nom -->
+      <div>
+        <input formControlName="nom" placeholder="Nom" class="champs nom" />
+        <div *ngIf="form.get('nom')?.invalid && form.get('nom')?.touched" class="erreur">
+          Le nom est requis
+        </div>
+      </div>
+
+      <!-- Champ Prénom -->
+      <div>
+        <input formControlName="prenom" placeholder="Prénom" class="champs prenom" />
+        <div *ngIf="form.get('prenom')?.invalid && form.get('prenom')?.touched" class="erreur">
+          Le prénom est requis
+        </div>
+      </div>
+
+      <!-- Champ Date de naissance -->
+      <div>
+        <input formControlName="dateNaissance" type="date" class="champs date" />
+        <div *ngIf="form.get('dateNaissance')?.invalid && form.get('dateNaissance')?.touched" class="erreur">
+          La date de naissance est requise
+        </div>
+      </div>
+
+      <!-- Champ Téléphone -->
+      <div>
+        <input formControlName="telephone" type="tel" placeholder="Téléphone" class="champs téléphone" />
+        <div *ngIf="form.get('telephone')?.invalid && form.get('telephone')?.touched" class="erreur">
+          Numéro de Téléphone invalide (8 chiffres requis)
+        </div>
+      </div>
+
+      <!-- Champ Email -->
+      <div>
+        <input formControlName="email" type="email" placeholder="Email" class="champs email" />
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="erreur">
+          Adresse email invalide
+        </div>
+      </div>
+
+      <!-- Champ Mot de passe -->
+      <div>
+        <input formControlName="motDePasse" type="password" placeholder="Mot de passe" class="champs pw" />
+        <div *ngIf="form.get('motDePasse')?.invalid && form.get('motDePasse')?.touched" class="erreur">
+          Mot de passe requis (min. 6 caractères)
+        </div>
+      </div>
+
+      <!-- Champ Confirmation -->
+      <div>
+        <input formControlName="confirmation" type="password" placeholder="Confirmation" class="champs pass" />
+        <div *ngIf="form.hasError('mismatch') && form.get('confirmation')?.touched" class="erreur">
+          Les mots de passe ne correspondent pas
+        </div>
+      </div>
+
+      <!-- Bouton Suivant -->
+      <button (click)="allerProfil()" class="to">Suivant</button> <!-- ✅ Correct -->
+
+    </form>
+  </div>
+
+  <div class="foot">v1.0 - E-Vote Mali © 2025</div>
+</div>

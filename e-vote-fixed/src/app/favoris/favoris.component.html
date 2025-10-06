@@ -1,0 +1,104 @@
+<form [formGroup]="formulaireVote" class="tout" (ngSubmit)="envoyerInfos()">
+
+  <img src="m20.jpg" alt="Background" class="background-image" />
+
+  <div class="back-btn" (click)="retourAccueil()">
+    <span class="material-icons">arrow_back</span>
+  </div>
+
+  <img src="logo-evote.png" alt="Logo" class="logo" />
+
+  <h2 class="confirmation-title">Confirmation de Vote</h2>
+
+  <div class="vote-details">
+   <div *ngIf="candidatChoisi">
+  <p>Candidat choisi : {{ candidatChoisi.nom }}</p>
+  <!-- autres éléments liés au candidat -->
+</div>
+
+    <div>
+      <p>Numéro d’électeur :</p>
+      <input type="number" formControlName="numero" placeholder="123456" class="champs numero" />
+      <div *ngIf="formulaireVote.get('numero')?.invalid && formulaireVote.get('numero')?.touched" class="erreur">
+        Numéro invalide
+      </div>
+    </div>
+
+    <div>
+      <p>E-mail :</p>
+      <input type="email" formControlName="email" placeholder="exemple@gmail.com" class="champs email" />
+      <div *ngIf="formulaireVote.get('email')?.invalid && formulaireVote.get('email')?.touched" class="erreur">
+        E-mail invalide
+      </div>
+    </div>
+
+    <div>
+      <p>Téléphone :</p>
+      <input type="tel" formControlName="telephone" placeholder="+223 70000000" class="champs tele" />
+      <div *ngIf="formulaireVote.get('telephone')?.invalid && formulaireVote.get('telephone')?.touched" class="erreur">
+        Téléphone invalide
+      </div>
+    </div>
+ 
+<div>
+    <h4 class="text-carte">Ajouter une photo de la carte d’identité</h4>
+    <div class="btn-import import-carte" (click)="ouvrirGalerie('carte')">Importer</div>
+  </div>
+<input
+  type="file"
+  accept="image/*"
+  #fileInput
+  style="display: none"
+  (change)="onFileSelected($event)"
+/>
+
+<div class="aff">
+
+<!-- Bouton pour afficher ou masquer la carte -->
+<button type="button" (click)="afficherCarte = !afficherCarte">
+  {{ afficherCarte ? 'Masquer la carte' : 'Afficher la carte' }}
+</button>
+
+<!-- Aperçu masqué de la carte -->
+<div *ngIf="photoCarte && afficherCarte" class="carte-masquee">
+  <img [src]="photoCarte" alt="Carte d’identité masquée" />
+  <p class="info-carte">✅ Carte importée (masquée pour confidentialité)</p>
+</div>
+</div>
+<div *ngIf="formulaireVote.get('photoCarte')?.invalid && formulaireVote.get('photoCarte')?.touched" class="erreur">
+  Veuillez importer une photo de votre carte d’identité
+</div>
+
+
+    <button class="envoyer-btn" type="submit" [disabled]="formulaireVote.invalid">Envoyer</button>
+
+    <!-- Bouton pour envoyer les infos et recevoir le code OTP -->
+    <button type="button" class="otp-btn" (click)="envoyerInfos()" >
+      Recevoir le code OTP
+    </button>
+
+    <p *ngIf="otpEnvoye" class="code">✅ Un code vous a été envoyé par SMS.</p>
+    
+  </div>
+
+  <label class="otp-label">Code OTP :</label>
+  <input
+    type="text"
+    formControlName="otpCode"
+    maxlength="6"
+    class="otp-input"
+    placeholder="123456"
+  />
+ 
+
+  <div class="confirmation-section">
+    <input type="checkbox" formControlName="confirmation" class="checkbox" />
+    <span class="confirm-text">Je confirme mon choix</span>
+    <div *ngIf="formulaireVote.get('confirmation')?.invalid && formulaireVote.get('confirmation')?.touched" class="erreur">
+      Vous devez confirmer votre choix
+    </div>
+  </div>
+
+  <button class="confirm-button" (click)="validerVote()" >Voter</button>
+ 
+</form>

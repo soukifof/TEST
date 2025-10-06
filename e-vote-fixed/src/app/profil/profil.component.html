@@ -1,0 +1,59 @@
+<div class="profil-page">
+  <!-- Image de fond -->
+  <img src="partie.jpg" alt="Image de fond" class="background-image" />
+
+  <!-- Bouton retour -->
+  <div class="back-btn" (click)="retourAccueil()" aria-label="Retour à l'accueil">
+    <span class="material-icons">arrow_back</span>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Titre -->
+  <h2 class="text-champ">Veuillez remplir le champ ci-dessous</h2>
+
+  <!-- Logo -->
+  <div>
+    <img src="logo-evote.png" alt="Logo E-Vote Mali" class="logo" />
+  </div>
+
+  <!-- Section photo de profil -->
+  <h4 class="text-profil">Ajouter une photo de profil</h4>
+  <div class="btn-import import-profil" (click)="ouvrirGalerie('profil')">Importer</div>
+
+  <!-- Input fichier caché -->
+  <input
+    type="file"
+    #fileInput
+    accept="image/*"
+    style="display: none"
+    (change)="onFileSelected($event)"
+  />
+
+  <!-- Formulaire -->
+  <form [formGroup]="formulaireProfil">
+    <div>
+      <input formControlName="numero" type="text" placeholder="Numéro NINA" class="champs numero" />
+      <div *ngIf="formulaireProfil.get('numero')?.invalid && formulaireProfil.get('numero')?.touched" class="erreur">
+        Numéro NINA invalide (14 chiffres requis)
+      </div>
+    </div>
+  </form>
+
+  <!-- Aperçu de la photo -->
+  <!--
+  <div *ngIf="photoProfil" class="profil-preview">
+    <img [src]="photoProfil" alt="Photo de profil" />
+  </div>
+  -->
+
+  <!-- Bouton création -->
+  <button type="button" class="to" (click)="allerprincipale()">Création</button>
+
+  <!-- Flèche création -->
+  <div class="arrow"></div>
+
+  <!-- Footer -->
+  <div class="footer">v1.0 – E-Vote Mali © 2025</div>
+</div>
